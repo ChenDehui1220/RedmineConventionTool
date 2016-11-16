@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    width: 700px;
+    height: 350px;
+    font-family: Arial;
+}
+.bg-blue {
+    background-color: rgba(87,53,151,1);
+}
+.word-white {
+    color: white;
+}
+.header, .footer {
+    padding: 1px 15px;
+}
+.containter {
+}
+h1 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 15px;
+}
+.containter a {
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    border: 2px dashed cyan;
+    display: inline-block;
+    padding: 3px 8px;
+    margin: 4px 2px;
+    color: #666;
+    text-decoration: none;
+}
+.section {
+    padding: 10px;
+    max-height: 235px;
+    overflow: auto;
+}
+.section label {
+    display: table-cell;
+    font-weight: bold;
+    font-size: 14px;
+}
+.section .pool {
+    margin-bottom: 5px;
+}
+#submit {
+    width: 100px;
+    background-color: gainsboro;
+    margin-top: 8px;
+    float: right;
+}
+#error {
+    float: left;
+    margin-top: 10px;
+    color: red;
+    margin-left: 20px;
+}
+.containter a.in {
+    background-color: cornflowerblue;
+    color: white;
+    border: 2px dashed white;
+}
+.nosupport {
+    font-size: 20px;
+    color: red;
+    margin: auto 35%;
+    line-height: 240px;
+}
+.del {
+    background-color: red;
+    width: 15px;
+    height: 24px;
+    display: inline-block;
+    color: white;
+    padding: 10px 0 0 5px;
+    opacity: 0.4;
+    margin-left: -3px;
+    margin-right: 1px;
+    cursor: pointer;
+}

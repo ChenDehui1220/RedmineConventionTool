@@ -1,0 +1,76 @@
+{
+	"name": "Redmine Convention Options Data",
+	"description": "",
+	"version": "1.0",
+	"data": [
+		{
+			"name": "1",
+			"options": [
+				{
+					"name": "館別",
+					"arg": "shop",
+					"require": true,
+					"data": [
+						"一館",
+						"二館"
+					]
+				},
+				{
+					"name": "模組",
+					"arg": "module",
+					"require": true,
+					"data": [
+						"商品",
+						"賣場",
+						"訂單",
+						"帳務",
+						"供應商",
+						"客服",
+						"行銷",
+						"全額折抵",
+						"APP3.0"
+					]
+				},
+				{
+					"name": "平台",
+					"arg": "platform",
+					"require": true,
+					"data": [
+						"B2E",
+						"B2C",
+						"SCM",
+						"CRM",
+						"mWeb",
+						"API",
+						"Andriod",
+						"iOS",
+						"鮮網",
+						"子系統"
+					]
+				},
+				{
+					"name": "單位",
+					"arg": "unit",
+					"require": false,
+					"data": [
+						"前端",
+						"後端"
+					]
+				},
+				{
+					"name": "重點",
+					"arg": "point",
+					"require": false,
+					"data": [
+						"超取",
+						"大量下架",
+						"異常賣場",
+						"退貨",
+						"逆物流",
+						"暫停銷售"
+					]
+				}
+			]
+		}
+	]
+}
