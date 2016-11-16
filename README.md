@@ -15,6 +15,7 @@ Redmine Convention Tool
 
 | 更新時間 | 內容 | 編輯者 |
 | --- | --- | --- |
+| 2016-11-16 | 新增自訂TAG | Gary Chen |
 | 2016-11-14 | 修正樣式、規範邏輯及Bug | Gary Chen |
 | 2016-11-10 | 第一版 | Gary Chen |
 
@@ -30,4 +31,7 @@ __Gulp__ - CLI version 3.9.0 / Local version 3.9.1
 ###佈署指令
 
 正式佈署  
-_#npm run build_  
+_#npm run build_ 
+
+開啟WATCH模式  
+_#npm run watch_  
