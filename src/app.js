@@ -69,6 +69,7 @@ $(function() {
         $.ajax({
             url: jsonAPI,
             dataType: 'json',
+            cache: false,
             success: function(data) {
                 if (typeof data === 'object' && Object.keys(data).length > 0) {
                     if (data.data.length > 0) {
