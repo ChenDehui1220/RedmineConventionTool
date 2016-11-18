@@ -12,44 +12,47 @@
 					"require": true,
 					"data": [
 						"一館",
-						"二館"
+						"二館",
+						"全館"
 					]
 				},
 				{
-					"name": "模組",
+					"name": "模組別或專案別",
 					"arg": "module",
 					"require": true,
 					"data": [
 						"商品",
 						"賣場",
-						"訂單",
-						"帳務",
 						"供應商",
+						"訂單",
 						"客服",
+						"帳務",
+						"金流",
 						"行銷",
+						"mWeb",
+						"APP",
+						"鮮網",
+						"子系統",
 						"全額折抵",
 						"APP3.0"
 					]
 				},
 				{
-					"name": "平台",
+					"name": "平台別",
 					"arg": "platform",
-					"require": true,
+					"require": false,
 					"data": [
 						"B2E",
 						"B2C",
 						"SCM",
 						"CRM",
-						"mWeb",
 						"API",
 						"Andriod",
-						"iOS",
-						"鮮網",
-						"子系統"
+						"iOS"
 					]
 				},
 				{
-					"name": "單位",
+					"name": "程式別",
 					"arg": "unit",
 					"require": false,
 					"data": [
