@@ -170,6 +170,7 @@ $(function() {
                         thisUser = response.user;
                         $error.html('Hi! ' + thisUser.toUpperCase() + ', Nice to meet you.');
 
+                        //screen input tag mapping tool tag.
                         setTimeout(function() {
                             var tag = response.nowtag[0];
                             tag = tag.replace(/\]\[/g, '-');
@@ -192,6 +193,7 @@ $(function() {
 
     });
 
+    //switch tabs
     var switchTabs = function(dom) {
         var tabIdx = dom.index();
         $nav.find('li').removeClass('active');
@@ -201,24 +203,7 @@ $(function() {
         actionTypeIdx = tabIdx;
     };
 
-    //Event
-    $nav.on('click', 'li', function(e) {
-        e.preventDefault();
-        switchTabs($(this));
-    });
-
-    $nav.find('li:eq(0)').trigger('click');
-
-    $container.on('click', 'a.tag', function(e) {
-        e.preventDefault();
-
-        if ($(this).hasClass('in')) {
-            $(this).removeClass('in');
-        } else {
-            $(this).addClass('in');
-        }
-    });
-
+    //custom tag
     var inputEvent = function(dom) {
         dom.focus();
         dom.on('blur', function() {
@@ -236,6 +221,29 @@ $(function() {
         });
     };
 
+    /* --- event start --- */
+
+    //tabs control
+    $nav.on('click', 'li', function(e) {
+        e.preventDefault();
+        switchTabs($(this));
+    });
+
+    //tabs default first
+    $nav.find('li:eq(0)').trigger('click');
+
+    //tag choose
+    $container.on('click', 'a.tag', function(e) {
+        e.preventDefault();
+
+        if ($(this).hasClass('in')) {
+            $(this).removeClass('in');
+        } else {
+            $(this).addClass('in');
+        }
+    });
+
+    //add new custom tag.
     $container.on('click', 'a.plus', function(e) {
         e.preventDefault();
 
@@ -247,6 +255,7 @@ $(function() {
         }
     });
 
+    //submit
     $submit.on('click', function() {
 
         catchData();
@@ -318,7 +327,8 @@ $(function() {
         });
     }
 
-    //Storage
+    /* --- storage --- */
+    
     //put storage data then set to chrome.
     function putStorageData(key, val) {
         defaultStorageData[key].push(val);
