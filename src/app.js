@@ -10,6 +10,8 @@ $(function() {
 
     'use strict';
 
+    var $nav = $('.nav');
+    var $tabsContent = $('.tabscontent');
     var $container = $('.containter');
     var $submit = $('#submit');
     var $options = $('#options');
@@ -20,6 +22,8 @@ $(function() {
     var tabsId = 0;
     var thisUser = '';
     var validTimes = 0;
+    var actionTypeData = ['ticket', 'reply'];
+    var actionTypeIdx = 0;
     var validMsg = [
         '**沒照規範 TC會生氣喔!!!',
         '**沒照規範 TC會非常生氣喔!!!',
@@ -85,49 +89,70 @@ $(function() {
 
     var catchData = function() {
         stringData = [];
-        $container.find('.pool').each(function() {
-            $(this).find('a').each(function() {
-                if ($(this).hasClass('in')) {
-                    stringData.push($(this).html());
-                }
+
+        if (actionTypeIdx === 0) {
+            $container.find('.pool').each(function() {
+                $(this).find('a').each(function() {
+                    if ($(this).hasClass('in')) {
+                        stringData.push($(this).html());
+                    }
+                });
             });
-        });
+        } else if (actionTypeIdx === 1) {
+            // stringData.push($('#replys').html());
+            var t = 'h3. [更動範圍]\r\n';
+            t += '模組:\r\n行為類型:\r\n異動點:\r\n\r\n';
+            t += 'h3. [複雜度]\r\n普通級\r\n\r\n';
+            t += 'h3. [預計處理步驟]\r\n...\r\n\r\n';
+            t += 'h3. [預計測試範圍]\r\n...\r\n\r\n';
+            t += 'h3. [實際處理步驟]\r\n...\r\n\r\n';
+            t += 'h3. [Code Commit Id]\r\n無\r\n\r\n';
+            t += 'h3. [DB異動]\r\n無\r\n\r\n';
+            t += 'h3. [產出相關文件]\r\n無\r\n\r\n';
+            stringData.push(t);
+        } else {}
     };
 
     var validRequireItems = function() {
         var flag = true;
-        var have = false;
 
-        if (stringData.length === 0) {
-            flag = false;
-        } else {
-            for (var i in optionsData) {
-                if (optionsData[i].require === true) {
+        if (actionTypeIdx === 0) {
+            var have = false;
 
-                    have = false;
+            if (stringData.length === 0) {
+                flag = false;
+            } else {
+                for (var i in optionsData) {
+                    if (optionsData[i].require === true) {
 
-                    for (var j in optionsData[i].data) {
-                        if (stringData.indexOf(optionsData[i].data[j]) !== -1) {
-                            have = true;
+                        have = false;
+
+                        for (var j in optionsData[i].data) {
+                            if (stringData.indexOf(optionsData[i].data[j]) !== -1) {
+                                have = true;
+                                break;
+                            }
+                        }
+
+                        if (!have) {
+                            flag = false;
                             break;
                         }
                     }
-
-                    if (!have) {
-                        flag = false;
-                        break;
-                    }
                 }
             }
-        }
 
-        if (!flag) {
-            $error.html(validMsg[validTimes]);
+            if (!flag) {
+                $error.html(validMsg[validTimes]);
 
-            if (validTimes < (validMsg.length) - 1) {
-                validTimes++;
+                if (validTimes < (validMsg.length) - 1) {
+                    validTimes++;
+                }
+            } else {
+                $error.html('嗯~ 好一位乖寶寶');
             }
         }
+
         return flag;
     };
 
@@ -144,6 +169,20 @@ $(function() {
                     if (typeof response === 'object' && response.user) {
                         thisUser = response.user;
                         $error.html('Hi! ' + thisUser.toUpperCase() + ', Nice to meet you.');
+
+                        setTimeout(function() {
+                            var tag = response.nowtag[0];
+                            tag = tag.replace(/\]\[/g, '-');
+                            tag = tag.replace(']', '');
+                            tag = tag.replace('[', '');
+                            tag = tag.split('-');
+                            $options.find('a').each(function() {
+                                if (tag.indexOf($(this).html()) !== -1) {
+                                    $(this).addClass('in');
+                                }
+                            });
+                        }, 50);
+
                     }
                 });
             });
@@ -153,12 +192,25 @@ $(function() {
 
     });
 
+    var switchTabs = function(dom) {
+        var tabIdx = dom.index();
+        $nav.find('li').removeClass('active');
+        dom.addClass('active');
+        $tabsContent.hide();
+        $tabsContent.eq(tabIdx).show();
+        actionTypeIdx = tabIdx;
+    };
 
     //Event
+    $nav.on('click', 'li', function(e) {
+        e.preventDefault();
+        switchTabs($(this));
+    });
+
+    $nav.find('li:eq(0)').trigger('click');
+
     $container.on('click', 'a.tag', function(e) {
         e.preventDefault();
-
-        var $pool = $(this).parent('.pool');
 
         if ($(this).hasClass('in')) {
             $(this).removeClass('in');
@@ -201,9 +253,7 @@ $(function() {
 
         if (validRequireItems()) {
 
-            $error.html('嗯~ 好一位乖寶寶');
-
-            chrome.tabs.sendMessage(tabsId, { action: 'submit', data: stringData }, function(response) {
+            chrome.tabs.sendMessage(tabsId, { action: actionTypeData[actionTypeIdx], data: stringData }, function(response) {
                 validTimes = 0;
             });
         }

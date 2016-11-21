@@ -9,7 +9,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
-var minicss = require('gulp-minify-css');
+var minicss = require('gulp-clean-css');
 var minijson = require('gulp-jsonminify');
 var htmlmin = require('gulp-htmlmin');
 var del = require('del');
@@ -71,6 +71,7 @@ gulp.task('minify-json', function() {
 gulp.task('watch', function(file) {
     gulp.watch(srcFolder + '*.js', ['minify-js']);
     gulp.watch(srcFolder + '*.css', ['minify-css']);
+    gulp.watch(srcFolder + '*.html', ['minify-html']);
 });
 
 // 佈署
