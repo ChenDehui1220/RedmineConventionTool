@@ -168,7 +168,7 @@ $(function() {
                 chrome.tabs.sendMessage(tabsId, { action: 'init' }, function(response) {
                     if (typeof response === 'object' && response.user) {
                         thisUser = response.user;
-                        $error.html('Hi! ' + thisUser.toUpperCase() + ', Nice to meet you.');
+                        $error.html('Hi! ' + thisUser.toUpperCase() + ', Merry Christmas II You.');
 
                         //screen input tag mapping tool tag.
                         setTimeout(function() {

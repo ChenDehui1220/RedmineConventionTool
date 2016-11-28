@@ -16,14 +16,28 @@ li {
 .bg-blue {
     background-color: rgba(87, 53, 151, 1);
 }
+.bg-red {
+    background-color: rgba(255, 0, 0, 1);
+}
 
 .word-white {
     color: white;
 }
 
-.header,
+#options {
+    background-image: url('./merryIdol.png');
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    background-position: 420px 212px;
+}
+
 .footer {
     padding: 1px 15px;
+}
+.header {
+        padding: 1px 15px;
+    font-family: CURSIVE;
+    line-height: 16px;
 }
 
 .containter {}
@@ -82,11 +96,12 @@ h3 {
     width: auto;
     height: 25px;
     line-height: 25px;
-    border: 2px dashed cyan;
+    border: 2px dashed #0ff;
     display: inline-block;
     padding: 3px 8px;
     margin: 4px 2px;
     color: #666;
+    background-color: rgba(255,255,255,.8);
     text-decoration: none;
 }
 
@@ -108,9 +123,11 @@ h3 {
 
 #submit {
     width: 100px;
-    background-color: gainsboro;
+    background-color: red;
     margin-top: 8px;
     float: right;
+    color: white;
+    font-family: Cursive;
 }
 
 #error {
