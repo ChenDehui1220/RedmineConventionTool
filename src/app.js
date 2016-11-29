@@ -171,19 +171,22 @@ $(function() {
                         $error.html('Hi! ' + thisUser.toUpperCase() + ', Merry Christmas II You.');
 
                         //screen input tag mapping tool tag.
-                        setTimeout(function() {
-                            var tag = response.nowtag[0];
-                            tag = tag.replace(/\]\[/g, '-');
-                            tag = tag.replace(']', '');
-                            tag = tag.replace('[', '');
-                            tag = tag.split('-');
-                            $options.find('a').each(function() {
-                                if (tag.indexOf($(this).html()) !== -1) {
-                                    $(this).addClass('in');
-                                }
-                            });
-                        }, 50);
-
+                        if (response.nowtag !== null) {
+                            if (response.nowtag.length > 0) {
+                                setTimeout(function() {
+                                    var tag = response.nowtag[0];
+                                    tag = tag.replace(/\]\[/g, '-');
+                                    tag = tag.replace(']', '');
+                                    tag = tag.replace('[', '');
+                                    tag = tag.split('-');
+                                    $options.find('a').each(function() {
+                                        if (tag.indexOf($(this).html()) !== -1) {
+                                            $(this).addClass('in');
+                                        }
+                                    });
+                                }, 250);
+                            }
+                        }
                     }
                 });
             });
@@ -235,7 +238,7 @@ $(function() {
     //tag choose
     $container.on('click', 'a.tag', function(e) {
         e.preventDefault();
-
+console.log('test');
         if ($(this).hasClass('in')) {
             $(this).removeClass('in');
         } else {
@@ -328,7 +331,7 @@ $(function() {
     }
 
     /* --- storage --- */
-    
+
     //put storage data then set to chrome.
     function putStorageData(key, val) {
         defaultStorageData[key].push(val);

@@ -92,6 +92,15 @@ h3 {
     border-bottom: 1px solid #fff;
 }
 
+.containter a.in {
+    background-color: lightcoral;
+    color: white;
+    border: 2px dashed white;
+}
+.containter a {
+    color: #666;
+}
+
 #options a {
     width: auto;
     height: 25px;
@@ -100,8 +109,7 @@ h3 {
     display: inline-block;
     padding: 3px 8px;
     margin: 4px 2px;
-    color: #666;
-    background-color: rgba(255,255,255,.8);
+    /*background-color: rgba(255,255,255,.8);*/
     text-decoration: none;
 }
 
@@ -135,12 +143,6 @@ h3 {
     margin-top: 10px;
     color: red;
     margin-left: 20px;
-}
-
-.containter a.in {
-    background-color: cornflowerblue;
-    color: white;
-    border: 2px dashed white;
 }
 
 .nosupport {
