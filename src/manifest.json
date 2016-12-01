@@ -3,7 +3,7 @@
 
     "name": "Redmine Convention Tool",
     "description": "This extension will valid Hiiir's redmine convention.",
-    "version": "0.0.1.0",
+    "version": "0.0.1.1",
 
     "browser_action": {
         "default_icon": "icon.png",

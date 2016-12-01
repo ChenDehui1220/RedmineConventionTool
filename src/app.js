@@ -100,15 +100,9 @@ $(function() {
             });
         } else if (actionTypeIdx === 1) {
             // stringData.push($('#replys').html());
-            var t = 'h3. [更動範圍]\r\n';
-            t += '模組:\r\n行為類型:\r\n異動點:\r\n\r\n';
-            t += 'h3. [複雜度]\r\n普通級\r\n\r\n';
-            t += 'h3. [預計處理步驟]\r\n...\r\n\r\n';
-            t += 'h3. [預計測試範圍]\r\n...\r\n\r\n';
-            t += 'h3. [實際處理步驟]\r\n...\r\n\r\n';
-            t += 'h3. [Code Commit Id]\r\n無\r\n\r\n';
-            t += 'h3. [DB異動]\r\n無\r\n\r\n';
-            t += 'h3. [產出相關文件]\r\n無\r\n\r\n';
+            var t = '[原因]\r\n...\r\n\r\n';
+            t += '[處理步驟]\r\n...\r\n\r\n';
+            t += '[相關文件]\r\n無\r\n\r\n';
             stringData.push(t);
         } else {}
     };
