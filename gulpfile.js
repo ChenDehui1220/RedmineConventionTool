@@ -27,7 +27,7 @@ gulp.task('clean', function() {
 
 // 複製
 gulp.task('copy', function() {
-    return gulp.src([srcFolder + '*.png'])
+    return gulp.src([srcFolder + '*.png', srcFolder + '*.jpeg'])
         .pipe(gulp.dest(buildFolder))
         .on('error', gutil.log);
 });

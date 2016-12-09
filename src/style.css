@@ -25,10 +25,11 @@ li {
 }
 
 #options {
-    background-image: url('./merryIdol.png');
+    background-image: url(./merryIdol.png);
     background-repeat: no-repeat;
-    background-size: 40% 40%;
-    background-position: 420px 212px;
+    background-size: 20% 20%;
+    background-position: 560px 280px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .footer {
@@ -163,4 +164,9 @@ h3 {
     margin-left: -3px;
     margin-right: 1px;
     cursor: pointer;
+}
+
+.ppt img {
+    width: 680px;
+    image-rendering: -webkit-optimize-contrast;
 }
