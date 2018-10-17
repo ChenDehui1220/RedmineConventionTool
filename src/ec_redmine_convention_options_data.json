@@ -1,79 +1,70 @@
 {
-	"name": "Redmine Convention Options Data",
-	"description": "",
-	"version": "1.0",
-	"data": [
-		{
-			"name": "1",
-			"options": [
-				{
-					"name": "館別",
-					"arg": "shop",
-					"require": true,
-					"data": [
-						"一館",
-						"二館",
-						"全館"
-					]
-				},
-				{
-					"name": "模組別或專案別",
-					"arg": "module",
-					"require": true,
-					"data": [
-						"商品",
-						"賣場",
-						"供應商",
-						"訂單",
-						"客服",
-						"帳務",
-						"金流",
-						"行銷",
-						"mWeb",
-						"APP",
-						"鮮網",
-						"子系統",
-						"全額折抵",
-						"APP3.0"
-					]
-				},
-				{
-					"name": "平台別",
-					"arg": "platform",
-					"require": false,
-					"data": [
-						"B2E",
-						"B2C",
-						"SCM",
-						"CRM",
-						"API",
-						"Andriod",
-						"iOS"
-					]
-				},
-				{
-					"name": "程式別",
-					"arg": "unit",
-					"require": false,
-					"data": [
-						"前端",
-						"後端"
-					]
-				},
-				{
-					"name": "重點",
-					"arg": "point",
-					"require": false,
-					"data": [
-						"超取",
-						"大量下架",
-						"異常賣場",
-						"退貨",
-						"逆物流",
-						"暫停銷售"
-					]
-				}
-			]
-		}
-	]
-}
+    "name": "Redmine Convention Options Data",
+    "description": "",
+    "version": "1.0",
+    "data": [
+      {
+        "name": "1",
+        "options": [
+          {
+            "name": "平台",
+            "arg": "shop",
+            "require": true,
+            "data": ["2.0", "加購", "舊平台", "EC", "EC後台", "SCM", "CRM"]
+          },
+          {
+            "name": "模組或專案",
+            "arg": "module",
+            "require": true,
+            "data": [
+              "商品",
+              "賣場",
+              "供應商",
+              "訂單",
+              "客服",
+              "帳務",
+              "金流",
+              "行銷",
+              "活動",
+              "導購",
+              "Wallet專案",
+              "F幣",
+              "SEO",
+              "PRD",
+              "LINE PAY",
+              "點數中心",
+              "API"
+            ]
+          },
+          {
+            "name": "裝置",
+            "arg": "platform",
+            "require": false,
+            "data": ["加購", "大網", "小網", "APP", "Andriod", "iOS"]
+          },
+          {
+            "name": "MVC",
+            "arg": "unit",
+            "require": false,
+            "data": ["UI", "前端", "後端", "QA"]
+          },
+          {
+            "name": "其他",
+            "arg": "point",
+            "require": false,
+            "data": [
+              "超取",
+              "大量下架",
+              "異常賣場",
+              "退貨",
+              "逆物流",
+              "暫停銷售",
+              "插單",
+              "返利",
+              "會員資料查詢"
+            ]
+          }
+        ]
+      }
+    ]
+  }
