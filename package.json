@@ -19,6 +19,5 @@
         "run-sequence": "^1.2.2",
         "del": "^2.2.1"
     },
-    "devDependencies": {
-    }
+    "devDependencies": {}
 }
