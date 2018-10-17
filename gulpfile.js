@@ -28,7 +28,7 @@ gulp.task('clean', function() {
 // 複製
 gulp.task('copy', function() {
   return gulp
-    .src([srcFolder + '*.png'])
+    .src([srcFolder + '*.png', srcFolder + '*.jpeg'])
     .pipe(gulp.dest(buildFolder))
     .on('error', gutil.log)
 })
@@ -49,11 +49,13 @@ gulp.task('minify-html', function() {
 
 // 壓縮 JS
 gulp.task('minify-js', function() {
-  return gulp
-    .src(srcFolder + '*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest(buildFolder))
-    .on('error', gutil.log)
+  return (
+    gulp
+      .src(srcFolder + '*.js')
+      .pipe(uglify())
+      .pipe(gulp.dest(buildFolder))
+      .on('error', gutil.log)
+  )
 })
 
 // 壓縮 CSS
@@ -68,7 +70,7 @@ gulp.task('minify-css', function() {
 // 壓縮 JSON
 gulp.task('minify-json', function() {
   return gulp
-    .src(srcFolder + 'manifest.json')
+    .src([srcFolder + 'manifest.json', srcFolder + 'ec_redmine_convention_options_data.json'])
     .pipe(minijson())
     .pipe(gulp.dest(buildFolder))
     .on('error', gutil.log)

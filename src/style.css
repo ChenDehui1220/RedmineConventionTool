@@ -1,147 +1,170 @@
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 13px;
-    width: 700px;
-    height: 480px;
-    font-family: Arial;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  width: 700px;
+  height: 550px;
+  font-family: Arial;
 }
 
 ul,
 li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .bg-blue {
-    background-color: rgba(87, 53, 151, 1);
+  background-color: rgba(87, 53, 151, 1);
+}
+.bg-red {
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .word-white {
-    color: white;
+  color: white;
 }
 
-.header,
+#options {
+  /* background-image: url(./merryIdol.png); */
+  background-repeat: no-repeat;
+  background-size: 20% 20%;
+  background-position: 560px 280px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .footer {
-    padding: 1px 15px;
+  padding: 1px 15px;
 }
-
-.containter {}
+.header {
+  padding: 1px 15px;
+  font-family: CURSIVE;
+  line-height: 16px;
+}
 
 h1 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 h3 {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .nav {
-    width: 100%;
-    line-height: 25px;
-    margin-top: 10px;
+  width: 100%;
+  line-height: 25px;
+  margin-top: 10px;
 }
 
 .nav ul {
-    margin: 0;
-    border-bottom: 1px solid #778;
+  margin: 0;
+  border-bottom: 1px solid #778;
 }
 
 .nav ul li {
-    list-style: none;
-    margin: 0;
-    display: inline;
-    padding-left: 4px;
+  list-style: none;
+  margin: 0;
+  display: inline;
+  padding-left: 4px;
 }
 
 .nav a {
-    padding: 3px 0.5em;
-    margin-left: 3px;
-    border: 1px solid #778;
-    border-bottom: none;
-    background: #DDE;
-    text-decoration: none;
+  padding: 3px 0.5em;
+  margin-left: 3px;
+  border: 1px solid #778;
+  border-bottom: none;
+  background: #dde;
+  text-decoration: none;
 }
 
 .nav a:visited {
-    padding: 5px;
-    color: #667;
+  padding: 5px;
+  color: #667;
 }
 
 .nav a:link {
-    padding: 5px;
-    color: #448;
+  padding: 5px;
+  color: #448;
 }
 
 .nav ul li.active a {
-    background-color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-#options a {
-    width: auto;
-    height: 25px;
-    line-height: 25px;
-    border: 2px dashed cyan;
-    display: inline-block;
-    padding: 3px 8px;
-    margin: 4px 2px;
-    color: #666;
-    text-decoration: none;
-}
-
-.section {
-    padding: 10px;
-    max-height: 330px;
-    overflow: auto;
-}
-
-.section label {
-    display: table-cell;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.section .pool {
-    margin-bottom: 5px;
-}
-
-#submit {
-    width: 100px;
-    background-color: gainsboro;
-    margin-top: 8px;
-    float: right;
-}
-
-#error {
-    float: left;
-    margin-top: 10px;
-    color: red;
-    margin-left: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .containter a.in {
-    background-color: cornflowerblue;
-    color: white;
-    border: 2px dashed white;
+  background-color: lightcoral;
+  color: white;
+  border: 2px dashed white;
+}
+.containter a {
+  color: #666;
+}
+
+#options a {
+  width: auto;
+  height: 25px;
+  line-height: 25px;
+  border: 2px dashed #0ff;
+  display: inline-block;
+  padding: 3px 8px;
+  margin: 4px 2px;
+  /*background-color: rgba(255,255,255,.8);*/
+  text-decoration: none;
+}
+
+.section {
+  padding: 10px;
+  max-height: 390px;
+  overflow: auto;
+}
+
+.section label {
+  display: table-cell;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.section .pool {
+  margin-bottom: 5px;
+}
+
+#submit {
+  width: 100px;
+  height: 25px;
+  background-color: blue;
+  margin-top: 8px;
+  float: right;
+  color: white;
+}
+
+#error {
+  float: left;
+  margin-top: 10px;
+  color: red;
+  margin-left: 20px;
 }
 
 .nosupport {
-    font-size: 20px;
-    color: red;
-    margin: auto 35%;
-    line-height: 240px;
+  font-size: 20px;
+  color: red;
+  margin: auto 35%;
+  line-height: 240px;
 }
 
 .del {
-    background-color: red;
-    width: 15px;
-    height: 24px;
-    display: inline-block;
-    color: white;
-    padding: 10px 0 0 5px;
-    opacity: 0.4;
-    margin-left: -3px;
-    margin-right: 1px;
-    cursor: pointer;
+  background-color: red;
+  width: 15px;
+  height: 24px;
+  display: inline-block;
+  color: white;
+  padding: 10px 0 0 5px;
+  opacity: 0.4;
+  margin-left: -3px;
+  margin-right: 1px;
+  cursor: pointer;
+}
+
+.ppt img {
+  width: 680px;
+  image-rendering: -webkit-optimize-contrast;
 }

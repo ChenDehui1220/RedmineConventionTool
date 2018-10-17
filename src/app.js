@@ -20,7 +20,6 @@ $(function() {
   var defaultStorageData = {}
   var tabsId = 0
   var thisUser = ''
-  var validTimes = 0
   var actionTypeData = ['ticket', 'reply']
   var actionTypeIdx = 0
   // var jsonAPI = 'http://static.fridaylifestyle.tw/ec_banner/ec_redmine_convention_options_data.json';
@@ -159,14 +158,21 @@ $(function() {
             response
           ) {
             if (typeof response === 'object' && response.user) {
-              thisUser = response.user
-              $error.html(
-                'Hi! ' + thisUser.toUpperCase() + ', Nice to meet you.'
-              )
+            //   thisUser = response.user
+            //   $error.html(
+            //     'Hi! ' + thisUser.toUpperCase() + ', Nice to meet you.'
+            //   )
 
               //screen input tag mapping tool tag.
               setTimeout(function() {
-                var tag = response.nowtag[0]
+                var tag = ''
+                if (
+                  !!response &&
+                  !!response.nowtag &&
+                  response.nowtag.length > 0
+                ) {
+                  tag = response.nowtag[0]
+                }
                 tag = tag.replace(/\]\[/g, '-')
                 tag = tag.replace(']', '')
                 tag = tag.replace('[', '')
